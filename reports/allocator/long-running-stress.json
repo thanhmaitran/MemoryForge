@@ -1,0 +1,204 @@
+{
+  "report_type": "allocator_experiment",
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-30T22:51:56Z",
+  "environment": {
+    "project_version": "0.1.0",
+    "git_commit": "unknown",
+    "compiler_name": "GCC",
+    "compiler_version": "13.3.0",
+    "build_type": "Release",
+    "operating_system": "Linux",
+    "cpu_description": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+    "hardware_threads": 1
+  },
+  "workload_config": {
+    "schema_version": 1,
+    "workload_id": "W05",
+    "name": "long-running-stress",
+    "seed": 20261029,
+    "heap_size_bytes": 4194304,
+    "operations": 200000,
+    "min_allocation_bytes": 16,
+    "max_allocation_bytes": 8192,
+    "allocation_probability": 0.6,
+    "release_policy": "age_weighted",
+    "alignment_policy": "power_of_two",
+    "warmup_operations": 5000,
+    "target_utilization": 0.75,
+    "long_lived_fraction": 0.2,
+    "burst_size": 200,
+    "burst_release_fraction": 0.7,
+    "large_request_probability": 0.05,
+    "repetitions": 5,
+    "sample_interval": 0
+  },
+  "measurement": {
+    "repetitions": 5,
+    "warmup_operations": 5000,
+    "sample_interval": 1000,
+    "validate_interval": 0,
+    "latency_unit": "ns",
+    "throughput_unit": "operations_per_second",
+    "trace_operations": 200000,
+    "trace_checksum_fnv1a64": 16939613441019400814
+  },
+  "results": [
+    {
+      "strategy": "first-fit",
+      "algorithmic": {
+        "allocate_attempts": 100455,
+        "allocations_succeeded": 100455,
+        "allocations_failed": 0,
+        "failure_rate": 0,
+        "frees_executed": 99545,
+        "frees_skipped_after_failed_allocation": 0,
+        "search_steps": 27988083,
+        "final_live_allocation_count": 910,
+        "final_live_requested_bytes": 2531091,
+        "final_live_allocated_bytes": 2534416,
+        "final_free_bytes": 1659888,
+        "final_largest_free_block": 727424,
+        "final_free_block_count": 622,
+        "final_external_fragmentation": 0.561763203,
+        "final_internal_overhead_ratio": 0.00131193932,
+        "peak_live_allocated_bytes": 3145728,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 21,
+        "throughput_ops_per_s_by_repetition": [
+          783642.351,
+          836450.122,
+          712552.164,
+          718127.904,
+          824205.194
+        ],
+        "throughput_median_ops_per_s": 783642.351,
+        "allocate_latency": {
+          "count": 487685,
+          "min_ns": 58,
+          "mean_ns": 2308.77615,
+          "median_ns": 1860,
+          "p95_ns": 5035,
+          "p99_ns": 7097,
+          "max_ns": 1946797
+        },
+        "free_latency": {
+          "count": 487315,
+          "min_ns": 63,
+          "mean_ns": 257.28176,
+          "median_ns": 225,
+          "p95_ns": 405,
+          "p99_ns": 549,
+          "max_ns": 307777
+        }
+      }
+    },
+    {
+      "strategy": "best-fit",
+      "algorithmic": {
+        "allocate_attempts": 100455,
+        "allocations_succeeded": 100455,
+        "allocations_failed": 0,
+        "failure_rate": 0,
+        "frees_executed": 99545,
+        "frees_skipped_after_failed_allocation": 0,
+        "search_steps": 48893485,
+        "final_live_allocation_count": 910,
+        "final_live_requested_bytes": 2531091,
+        "final_live_allocated_bytes": 2534416,
+        "final_free_bytes": 1659888,
+        "final_largest_free_block": 857760,
+        "final_free_block_count": 490,
+        "final_external_fragmentation": 0.483242243,
+        "final_internal_overhead_ratio": 0.00131193932,
+        "peak_live_allocated_bytes": 3145728,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 20,
+        "throughput_ops_per_s_by_repetition": [
+          384470.871,
+          372141.683,
+          335149.354,
+          367655.383,
+          391331.716
+        ],
+        "throughput_median_ops_per_s": 372141.683,
+        "allocate_latency": {
+          "count": 487685,
+          "min_ns": 1307,
+          "mean_ns": 5237.1933,
+          "median_ns": 4808,
+          "p95_ns": 7364,
+          "p99_ns": 10710,
+          "max_ns": 2318637
+        },
+        "free_latency": {
+          "count": 487315,
+          "min_ns": 67,
+          "mean_ns": 239.378948,
+          "median_ns": 210,
+          "p95_ns": 375,
+          "p99_ns": 497,
+          "max_ns": 1285036
+        }
+      }
+    },
+    {
+      "strategy": "worst-fit",
+      "algorithmic": {
+        "allocate_attempts": 100455,
+        "allocations_succeeded": 97693,
+        "allocations_failed": 2762,
+        "failure_rate": 0.0274948982,
+        "frees_executed": 96810,
+        "frees_skipped_after_failed_allocation": 2735,
+        "search_steps": 71681758,
+        "final_live_allocation_count": 883,
+        "final_live_requested_bytes": 2317953,
+        "final_live_allocated_bytes": 2321168,
+        "final_free_bytes": 1873136,
+        "final_largest_free_block": 11840,
+        "final_free_block_count": 642,
+        "final_external_fragmentation": 0.993679049,
+        "final_internal_overhead_ratio": 0.00138507855,
+        "peak_live_allocated_bytes": 3034256,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 20,
+        "throughput_ops_per_s_by_repetition": [
+          235864.621,
+          230025.545,
+          208821.867,
+          235449.629,
+          233196.971
+        ],
+        "throughput_median_ops_per_s": 233196.971,
+        "allocate_latency": {
+          "count": 487685,
+          "min_ns": 1761,
+          "mean_ns": 8649.88237,
+          "median_ns": 8027,
+          "p95_ns": 11429,
+          "p99_ns": 27451,
+          "max_ns": 4049178
+        },
+        "free_latency": {
+          "count": 473640,
+          "min_ns": 80,
+          "mean_ns": 301.976738,
+          "median_ns": 257,
+          "p95_ns": 486,
+          "p99_ns": 647,
+          "max_ns": 432072
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "report_type": "allocator_experiment",
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-30T22:51:36Z",
+  "environment": {
+    "project_version": "0.1.0",
+    "git_commit": "unknown",
+    "compiler_name": "GCC",
+    "compiler_version": "13.3.0",
+    "build_type": "Release",
+    "operating_system": "Linux",
+    "cpu_description": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+    "hardware_threads": 1
+  },
+  "workload_config": {
+    "schema_version": 1,
+    "workload_id": "W03",
+    "name": "burst-allocation",
+    "seed": 20261029,
+    "heap_size_bytes": 1048576,
+    "operations": 50000,
+    "min_allocation_bytes": 16,
+    "max_allocation_bytes": 2048,
+    "allocation_probability": 0.5,
+    "release_policy": "uniform",
+    "alignment_policy": "default",
+    "warmup_operations": 1000,
+    "target_utilization": 0.75,
+    "long_lived_fraction": 0.2,
+    "burst_size": 200,
+    "burst_release_fraction": 0.7,
+    "large_request_probability": 0.05,
+    "repetitions": 5,
+    "sample_interval": 0
+  },
+  "measurement": {
+    "repetitions": 5,
+    "warmup_operations": 1000,
+    "sample_interval": 250,
+    "validate_interval": 0,
+    "latency_unit": "ns",
+    "throughput_unit": "operations_per_second",
+    "trace_operations": 50000,
+    "trace_checksum_fnv1a64": 6167787268475455012
+  },
+  "results": [
+    {
+      "strategy": "first-fit",
+      "algorithmic": {
+        "allocate_attempts": 25086,
+        "allocations_succeeded": 25086,
+        "allocations_failed": 0,
+        "failure_rate": 0,
+        "frees_executed": 24914,
+        "frees_skipped_after_failed_allocation": 0,
+        "search_steps": 697570,
+        "final_live_allocation_count": 172,
+        "final_live_requested_bytes": 189045,
+        "final_live_allocated_bytes": 190352,
+        "final_free_bytes": 858224,
+        "final_largest_free_block": 739264,
+        "final_free_block_count": 64,
+        "final_external_fragmentation": 0.138611831,
+        "final_internal_overhead_ratio": 0.00686622678,
+        "peak_live_allocated_bytes": 323536,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 20,
+        "throughput_ops_per_s_by_repetition": [
+          5501462.83,
+          5074455.73,
+          5772312.43,
+          4411010.78,
+          5820344.96
+        ],
+        "throughput_median_ops_per_s": 5501462.83,
+        "allocate_latency": {
+          "count": 122430,
+          "min_ns": 57,
+          "mean_ns": 259.731022,
+          "median_ns": 240,
+          "p95_ns": 423,
+          "p99_ns": 534,
+          "max_ns": 65135
+        },
+        "free_latency": {
+          "count": 122570,
+          "min_ns": 56,
+          "mean_ns": 165.995211,
+          "median_ns": 148,
+          "p95_ns": 250,
+          "p99_ns": 316,
+          "max_ns": 158766
+        }
+      }
+    },
+    {
+      "strategy": "best-fit",
+      "algorithmic": {
+        "allocate_attempts": 25086,
+        "allocations_succeeded": 25086,
+        "allocations_failed": 0,
+        "failure_rate": 0,
+        "frees_executed": 24914,
+        "frees_skipped_after_failed_allocation": 0,
+        "search_steps": 1295549,
+        "final_live_allocation_count": 172,
+        "final_live_requested_bytes": 189045,
+        "final_live_allocated_bytes": 190352,
+        "final_free_bytes": 858224,
+        "final_largest_free_block": 743584,
+        "final_free_block_count": 53,
+        "final_external_fragmentation": 0.13357818,
+        "final_internal_overhead_ratio": 0.00686622678,
+        "peak_live_allocated_bytes": 323536,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 32,
+        "throughput_ops_per_s_by_repetition": [
+          2976245.97,
+          3574119.06,
+          3547893.52,
+          3628911.91,
+          3600133.6
+        ],
+        "throughput_median_ops_per_s": 3574119.06,
+        "allocate_latency": {
+          "count": 122430,
+          "min_ns": 169,
+          "mean_ns": 447.469909,
+          "median_ns": 397,
+          "p95_ns": 698,
+          "p99_ns": 999,
+          "max_ns": 187784
+        },
+        "free_latency": {
+          "count": 122570,
+          "min_ns": 54,
+          "mean_ns": 158.043028,
+          "median_ns": 142,
+          "p95_ns": 222,
+          "p99_ns": 273,
+          "max_ns": 121651
+        }
+      }
+    },
+    {
+      "strategy": "worst-fit",
+      "algorithmic": {
+        "allocate_attempts": 25086,
+        "allocations_succeeded": 25086,
+        "allocations_failed": 0,
+        "failure_rate": 0,
+        "frees_executed": 24914,
+        "frees_skipped_after_failed_allocation": 0,
+        "search_steps": 1667706,
+        "final_live_allocation_count": 172,
+        "final_live_requested_bytes": 189045,
+        "final_live_allocated_bytes": 190352,
+        "final_free_bytes": 858224,
+        "final_largest_free_block": 38416,
+        "final_free_block_count": 71,
+        "final_external_fragmentation": 0.955237793,
+        "final_internal_overhead_ratio": 0.00686622678,
+        "peak_live_allocated_bytes": 323536,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 20,
+        "throughput_ops_per_s_by_repetition": [
+          3451986.08,
+          3548190.51,
+          3425264.64,
+          3405391.18,
+          3514244.49
+        ],
+        "throughput_median_ops_per_s": 3451986.08,
+        "allocate_latency": {
+          "count": 122430,
+          "min_ns": 286,
+          "mean_ns": 454.437221,
+          "median_ns": 416,
+          "p95_ns": 562,
+          "p99_ns": 820,
+          "max_ns": 41722
+        },
+        "free_latency": {
+          "count": 122570,
+          "min_ns": 55,
+          "mean_ns": 158.411634,
+          "median_ns": 144,
+          "p95_ns": 225,
+          "p99_ns": 274,
+          "max_ns": 36338
+        }
+      }
+    }
+  ]
+}

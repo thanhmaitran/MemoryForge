@@ -1,0 +1,204 @@
+{
+  "report_type": "allocator_experiment",
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-30T22:52:00Z",
+  "environment": {
+    "project_version": "0.1.0",
+    "git_commit": "unknown",
+    "compiler_name": "GCC",
+    "compiler_version": "13.3.0",
+    "build_type": "Release",
+    "operating_system": "Linux",
+    "cpu_description": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+    "hardware_threads": 1
+  },
+  "workload_config": {
+    "schema_version": 1,
+    "workload_id": "W01",
+    "name": "uniform-random",
+    "seed": 20261029,
+    "heap_size_bytes": 1048576,
+    "operations": 50000,
+    "min_allocation_bytes": 16,
+    "max_allocation_bytes": 4096,
+    "allocation_probability": 0.55,
+    "release_policy": "uniform",
+    "alignment_policy": "default",
+    "warmup_operations": 1000,
+    "target_utilization": 0.75,
+    "long_lived_fraction": 0.2,
+    "burst_size": 200,
+    "burst_release_fraction": 0.7,
+    "large_request_probability": 0.05,
+    "repetitions": 5,
+    "sample_interval": 0
+  },
+  "measurement": {
+    "repetitions": 5,
+    "warmup_operations": 1000,
+    "sample_interval": 250,
+    "validate_interval": 0,
+    "latency_unit": "ns",
+    "throughput_unit": "operations_per_second",
+    "trace_operations": 50000,
+    "trace_checksum_fnv1a64": 16998455249232567206
+  },
+  "results": [
+    {
+      "strategy": "first-fit",
+      "algorithmic": {
+        "allocate_attempts": 25195,
+        "allocations_succeeded": 25195,
+        "allocations_failed": 0,
+        "failure_rate": 0,
+        "frees_executed": 24805,
+        "frees_skipped_after_failed_allocation": 0,
+        "search_steps": 2211571,
+        "final_live_allocation_count": 390,
+        "final_live_requested_bytes": 776376,
+        "final_live_allocated_bytes": 779296,
+        "final_free_bytes": 269280,
+        "final_largest_free_block": 136592,
+        "final_free_block_count": 187,
+        "final_external_fragmentation": 0.49275104,
+        "final_internal_overhead_ratio": 0.00374697163,
+        "peak_live_allocated_bytes": 786432,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 20,
+        "throughput_ops_per_s_by_repetition": [
+          2905228.02,
+          2906723.6,
+          2936014.13,
+          2918232.26,
+          2903777.18
+        ],
+        "throughput_median_ops_per_s": 2906723.6,
+        "allocate_latency": {
+          "count": 123140,
+          "min_ns": 63,
+          "mean_ns": 552.705823,
+          "median_ns": 501,
+          "p95_ns": 1008,
+          "p99_ns": 1226,
+          "max_ns": 81377
+        },
+        "free_latency": {
+          "count": 121860,
+          "min_ns": 57,
+          "mean_ns": 180.053775,
+          "median_ns": 165,
+          "p95_ns": 265,
+          "p99_ns": 335,
+          "max_ns": 60607
+        }
+      }
+    },
+    {
+      "strategy": "best-fit",
+      "algorithmic": {
+        "allocate_attempts": 25195,
+        "allocations_succeeded": 25195,
+        "allocations_failed": 0,
+        "failure_rate": 0,
+        "frees_executed": 24805,
+        "frees_skipped_after_failed_allocation": 0,
+        "search_steps": 3685845,
+        "final_live_allocation_count": 390,
+        "final_live_requested_bytes": 776376,
+        "final_live_allocated_bytes": 779296,
+        "final_free_bytes": 269280,
+        "final_largest_free_block": 168688,
+        "final_free_block_count": 154,
+        "final_external_fragmentation": 0.373559121,
+        "final_internal_overhead_ratio": 0.00374697163,
+        "peak_live_allocated_bytes": 786432,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 20,
+        "throughput_ops_per_s_by_repetition": [
+          1590270.71,
+          1591127.97,
+          1563857.45,
+          1596515.71,
+          1591603.56
+        ],
+        "throughput_median_ops_per_s": 1591127.97,
+        "allocate_latency": {
+          "count": 123140,
+          "min_ns": 243,
+          "mean_ns": 1116.60267,
+          "median_ns": 1005,
+          "p95_ns": 1710,
+          "p99_ns": 2151,
+          "max_ns": 132045
+        },
+        "free_latency": {
+          "count": 121860,
+          "min_ns": 57,
+          "mean_ns": 182.108034,
+          "median_ns": 162,
+          "p95_ns": 261,
+          "p99_ns": 330,
+          "max_ns": 364638
+        }
+      }
+    },
+    {
+      "strategy": "worst-fit",
+      "algorithmic": {
+        "allocate_attempts": 25195,
+        "allocations_succeeded": 24197,
+        "allocations_failed": 998,
+        "failure_rate": 0.0396110339,
+        "frees_executed": 23824,
+        "frees_skipped_after_failed_allocation": 981,
+        "search_steps": 4520948,
+        "final_live_allocation_count": 373,
+        "final_live_requested_bytes": 712440,
+        "final_live_allocated_bytes": 715232,
+        "final_free_bytes": 333344,
+        "final_largest_free_block": 3856,
+        "final_free_block_count": 195,
+        "final_external_fragmentation": 0.98843237,
+        "final_internal_overhead_ratio": 0.00390362847,
+        "peak_live_allocated_bytes": 755072,
+        "validation_checks": 0,
+        "drain_verified": true
+      },
+      "wall_clock": {
+        "timer_overhead_ns": 20,
+        "throughput_ops_per_s_by_repetition": [
+          1172771.05,
+          1061962.48,
+          1105077.01,
+          1154286.18,
+          1094004.5
+        ],
+        "throughput_median_ops_per_s": 1105077.01,
+        "allocate_latency": {
+          "count": 123140,
+          "min_ns": 319,
+          "mean_ns": 1652.154,
+          "median_ns": 1473,
+          "p95_ns": 2001,
+          "p99_ns": 2424,
+          "max_ns": 1334676
+        },
+        "free_latency": {
+          "count": 116955,
+          "min_ns": 61,
+          "mean_ns": 226.206379,
+          "median_ns": 176,
+          "p95_ns": 289,
+          "p99_ns": 377,
+          "max_ns": 2070578
+        }
+      }
+    }
+  ]
+}
