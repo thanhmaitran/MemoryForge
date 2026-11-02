@@ -1,0 +1,5 @@
+add_executable(allocator_basic allocator/basic_usage.cpp)
+target_link_libraries(allocator_basic PRIVATE memoryforge)
+
+add_executable(vm_translation virtual-memory/translation_demo.cpp)
+target_link_libraries(vm_translation PRIVATE memoryforge)
