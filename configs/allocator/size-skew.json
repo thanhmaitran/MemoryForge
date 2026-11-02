@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "workload_id": "W04",
+  "name": "size-skew",
+  "seed": 20261029,
+  "heap_size_bytes": 1048576,
+  "operations": 50000,
+  "min_allocation_bytes": 16,
+  "max_allocation_bytes": 65536,
+  "allocation_probability": 0.55,
+  "release_policy": "uniform",
+  "alignment_policy": "default",
+  "warmup_operations": 1000,
+  "large_request_probability": 0.03
+}

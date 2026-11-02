@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "workload_id": "W03",
+  "name": "burst-allocation",
+  "seed": 20261029,
+  "heap_size_bytes": 1048576,
+  "operations": 50000,
+  "min_allocation_bytes": 16,
+  "max_allocation_bytes": 2048,
+  "allocation_probability": 0.5,
+  "release_policy": "uniform",
+  "alignment_policy": "default",
+  "warmup_operations": 1000,
+  "burst_size": 200,
+  "burst_release_fraction": 0.7
+}

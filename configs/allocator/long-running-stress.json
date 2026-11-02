@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "workload_id": "W05",
+  "name": "long-running-stress",
+  "seed": 20261029,
+  "heap_size_bytes": 4194304,
+  "operations": 200000,
+  "min_allocation_bytes": 16,
+  "max_allocation_bytes": 8192,
+  "allocation_probability": 0.6,
+  "release_policy": "age_weighted",
+  "alignment_policy": "power_of_two",
+  "warmup_operations": 5000,
+  "repetitions": 3
+}

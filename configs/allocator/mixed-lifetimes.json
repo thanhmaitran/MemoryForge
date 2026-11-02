@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "workload_id": "W02",
+  "name": "mixed-lifetimes",
+  "seed": 20261029,
+  "heap_size_bytes": 1048576,
+  "operations": 50000,
+  "min_allocation_bytes": 16,
+  "max_allocation_bytes": 4096,
+  "allocation_probability": 0.65,
+  "release_policy": "age_weighted",
+  "alignment_policy": "power_of_two",
+  "warmup_operations": 1000,
+  "long_lived_fraction": 0.2
+}
