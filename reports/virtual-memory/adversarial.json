@@ -1,0 +1,259 @@
+{
+  "report_type": "virtual_memory_experiment",
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-30T22:52:00Z",
+  "environment": {
+    "project_version": "0.1.0",
+    "git_commit": "unknown",
+    "compiler_name": "GCC",
+    "compiler_version": "13.3.0",
+    "build_type": "Release",
+    "operating_system": "Linux",
+    "cpu_description": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+    "hardware_threads": 1
+  },
+  "workload_config": {
+    "schema_version": 1,
+    "workload_id": "V05",
+    "name": "adversarial-cyclic",
+    "seed": 20261029,
+    "pattern": "adversarial",
+    "page_size": 4096,
+    "virtual_pages": 64,
+    "frames": [
+      8,
+      16
+    ],
+    "accesses": 20000,
+    "write_probability": 0.3,
+    "loop_pages": 8,
+    "working_set_pages": 8,
+    "phase_length": 1000,
+    "adversarial_frames": 8,
+    "repetitions": 5
+  },
+  "measurement": {
+    "repetitions": 5,
+    "validate_interval": 0,
+    "throughput_unit": "accesses_per_second",
+    "trace_checksum_fnv1a64": 17743055206668162245
+  },
+  "results": [
+    {
+      "policy": "fifo",
+      "frames": 8,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 14099,
+        "writes": 5901,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 9,
+        "replacements": 19992,
+        "writebacks": 5899,
+        "metadata_bytes": 1160,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          25481797.1,
+          27674115.2,
+          27661522.5,
+          25093851,
+          27410965.8
+        ],
+        "accesses_per_s_median": 27410965.8
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 8,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 14099,
+        "writes": 5901,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 9,
+        "replacements": 19992,
+        "writebacks": 5899,
+        "metadata_bytes": 1160,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          14369870.4,
+          14823236.6,
+          13535673.6,
+          14755780.8,
+          14337369.8
+        ],
+        "accesses_per_s_median": 14369870.4
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 8,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 14099,
+        "writes": 5901,
+        "hits": 17493,
+        "page_faults": 2507,
+        "fault_rate": 0.12535,
+        "compulsory_faults": 9,
+        "replacements": 2499,
+        "writebacks": 2333,
+        "metadata_bytes": 1160,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          27624576.5,
+          28655060.4,
+          23252515.3,
+          26985017.9,
+          28455249.9
+        ],
+        "accesses_per_s_median": 27624576.5
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 8,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 14099,
+        "writes": 5901,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 9,
+        "replacements": 19992,
+        "writebacks": 5899,
+        "metadata_bytes": 1160,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          15509238.1,
+          16307733.5,
+          16273035.5,
+          15362186.6,
+          15008941.6
+        ],
+        "accesses_per_s_median": 15509238.1
+      }
+    },
+    {
+      "policy": "fifo",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 14099,
+        "writes": 5901,
+        "hits": 19991,
+        "page_faults": 9,
+        "fault_rate": 0.00045,
+        "compulsory_faults": 9,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 1288,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          36601010.6,
+          34392685.4,
+          33916355.5,
+          34773053.7,
+          34581614.3
+        ],
+        "accesses_per_s_median": 34581614.3
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 14099,
+        "writes": 5901,
+        "hits": 19991,
+        "page_faults": 9,
+        "fault_rate": 0.00045,
+        "compulsory_faults": 9,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 1288,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          31913043.3,
+          32255515.3,
+          31398800.9,
+          32052925.8,
+          27042704.5
+        ],
+        "accesses_per_s_median": 31913043.3
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 14099,
+        "writes": 5901,
+        "hits": 19991,
+        "page_faults": 9,
+        "fault_rate": 0.00045,
+        "compulsory_faults": 9,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 1288,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          33635209.3,
+          31868091.6,
+          31669973.5,
+          32222048.6,
+          32276753.8
+        ],
+        "accesses_per_s_median": 32222048.6
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 14099,
+        "writes": 5901,
+        "hits": 19991,
+        "page_faults": 9,
+        "fault_rate": 0.00045,
+        "compulsory_faults": 9,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 1288,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          33834363.9,
+          33619830.3,
+          31941279.2,
+          33639905,
+          35502538.4
+        ],
+        "accesses_per_s_median": 33639905
+      }
+    }
+  ]
+}

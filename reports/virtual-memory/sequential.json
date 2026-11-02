@@ -1,0 +1,368 @@
+{
+  "report_type": "virtual_memory_experiment",
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-30T22:52:01Z",
+  "environment": {
+    "project_version": "0.1.0",
+    "git_commit": "unknown",
+    "compiler_name": "GCC",
+    "compiler_version": "13.3.0",
+    "build_type": "Release",
+    "operating_system": "Linux",
+    "cpu_description": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+    "hardware_threads": 1
+  },
+  "workload_config": {
+    "schema_version": 1,
+    "workload_id": "V01",
+    "name": "sequential",
+    "seed": 20261029,
+    "pattern": "sequential",
+    "page_size": 4096,
+    "virtual_pages": 512,
+    "frames": [
+      4,
+      16,
+      64
+    ],
+    "accesses": 20000,
+    "write_probability": 0.2,
+    "loop_pages": 8,
+    "working_set_pages": 8,
+    "phase_length": 1000,
+    "adversarial_frames": 0,
+    "repetitions": 5
+  },
+  "measurement": {
+    "repetitions": 5,
+    "validate_interval": 0,
+    "throughput_unit": "accesses_per_second",
+    "trace_checksum_fnv1a64": 1382884227387396760
+  },
+  "results": [
+    {
+      "policy": "fifo",
+      "frames": 4,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19996,
+        "writebacks": 3865,
+        "metadata_bytes": 8320,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          27457554.1,
+          25535674.6,
+          24950909.1,
+          28054464.9,
+          27995991
+        ],
+        "accesses_per_s_median": 27457554.1
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 4,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19996,
+        "writebacks": 3865,
+        "metadata_bytes": 8320,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          7584545.88,
+          7359066.52,
+          6888921.65,
+          7062431.19,
+          9069998.62
+        ],
+        "accesses_per_s_median": 7359066.52
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 4,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 117,
+        "page_faults": 19883,
+        "fault_rate": 0.99415,
+        "compulsory_faults": 512,
+        "replacements": 19879,
+        "writebacks": 3854,
+        "metadata_bytes": 8320,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          8774573.74,
+          8749909.22,
+          8616663.59,
+          8627200.96,
+          8781890.34
+        ],
+        "accesses_per_s_median": 8749909.22
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 4,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19996,
+        "writebacks": 3865,
+        "metadata_bytes": 8320,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          8604967.05,
+          9019279.61,
+          13864587.3,
+          15311684.7,
+          8926236.26
+        ],
+        "accesses_per_s_median": 9019279.61
+      }
+    },
+    {
+      "policy": "fifo",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19984,
+        "writebacks": 3864,
+        "metadata_bytes": 8512,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          17396508.2,
+          15828144.3,
+          16956265.6,
+          17873803.8,
+          18213874.6
+        ],
+        "accesses_per_s_median": 17396508.2
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19984,
+        "writebacks": 3864,
+        "metadata_bytes": 8512,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          7786042.66,
+          7666871.37,
+          7475391.94,
+          7238359.54,
+          7577910.39
+        ],
+        "accesses_per_s_median": 7577910.39
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 585,
+        "page_faults": 19415,
+        "fault_rate": 0.97075,
+        "compulsory_faults": 512,
+        "replacements": 19399,
+        "writebacks": 3785,
+        "metadata_bytes": 8512,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          5348154.14,
+          5185986.32,
+          5230689.08,
+          5652404.8,
+          5908848.91
+        ],
+        "accesses_per_s_median": 5348154.14
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19984,
+        "writebacks": 3864,
+        "metadata_bytes": 8512,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          8201847.47,
+          11158497.5,
+          16240634.2,
+          16199880.6,
+          16964420.5
+        ],
+        "accesses_per_s_median": 16199880.6
+      }
+    },
+    {
+      "policy": "fifo",
+      "frames": 64,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19936,
+        "writebacks": 3856,
+        "metadata_bytes": 9280,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          21284702,
+          24137739.6,
+          28859445.8,
+          22218593.2,
+          18022174.5
+        ],
+        "accesses_per_s_median": 22218593.2
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 64,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19936,
+        "writebacks": 3856,
+        "metadata_bytes": 9280,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          12450346.5,
+          13579189.1,
+          13844126.2,
+          14301159.5,
+          13927372.9
+        ],
+        "accesses_per_s_median": 13844126.2
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 64,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 2457,
+        "page_faults": 17543,
+        "fault_rate": 0.87715,
+        "compulsory_faults": 512,
+        "replacements": 17479,
+        "writebacks": 3400,
+        "metadata_bytes": 9280,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          4127916.71,
+          4056967.12,
+          3102715.71,
+          2817111.7,
+          2838486.3
+        ],
+        "accesses_per_s_median": 3102715.71
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 64,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 512,
+        "replacements": 19936,
+        "writebacks": 3856,
+        "metadata_bytes": 9280,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          8267421.32,
+          8514011.3,
+          8803092,
+          8562633.52,
+          8564433.88
+        ],
+        "accesses_per_s_median": 8562633.52
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+workload_id,workload_name,pattern,seed,page_size,virtual_pages,frames,policy,trace_checksum,accesses,hits,page_faults,fault_rate,compulsory_faults,replacements,writebacks,metadata_bytes,accesses_per_s_median,accesses_per_s_min,accesses_per_s_max,build_type,compiler,git_commit
+V05,adversarial-cyclic,adversarial,20261029,4096,64,8,fifo,17743055206668162245,20000,0,20000,1,9,19992,5899,1160,27410965.8,25093851,27674115.2,Release,GCC 13.3.0,unknown
+V05,adversarial-cyclic,adversarial,20261029,4096,64,8,lru,17743055206668162245,20000,0,20000,1,9,19992,5899,1160,14369870.4,13535673.6,14823236.6,Release,GCC 13.3.0,unknown
+V05,adversarial-cyclic,adversarial,20261029,4096,64,8,opt,17743055206668162245,20000,17493,2507,0.12535,9,2499,2333,1160,27624576.5,23252515.3,28655060.4,Release,GCC 13.3.0,unknown
+V05,adversarial-cyclic,adversarial,20261029,4096,64,8,clock,17743055206668162245,20000,0,20000,1,9,19992,5899,1160,15509238.1,15008941.6,16307733.5,Release,GCC 13.3.0,unknown
+V05,adversarial-cyclic,adversarial,20261029,4096,64,16,fifo,17743055206668162245,20000,19991,9,0.00045,9,0,0,1288,34581614.3,33916355.5,36601010.6,Release,GCC 13.3.0,unknown
+V05,adversarial-cyclic,adversarial,20261029,4096,64,16,lru,17743055206668162245,20000,19991,9,0.00045,9,0,0,1288,31913043.3,27042704.5,32255515.3,Release,GCC 13.3.0,unknown
+V05,adversarial-cyclic,adversarial,20261029,4096,64,16,opt,17743055206668162245,20000,19991,9,0.00045,9,0,0,1288,32222048.6,31669973.5,33635209.3,Release,GCC 13.3.0,unknown
+V05,adversarial-cyclic,adversarial,20261029,4096,64,16,clock,17743055206668162245,20000,19991,9,0.00045,9,0,0,1288,33639905,31941279.2,35502538.4,Release,GCC 13.3.0,unknown

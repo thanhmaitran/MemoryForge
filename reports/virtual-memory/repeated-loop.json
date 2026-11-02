@@ -1,0 +1,477 @@
+{
+  "report_type": "virtual_memory_experiment",
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-30T22:52:00Z",
+  "environment": {
+    "project_version": "0.1.0",
+    "git_commit": "unknown",
+    "compiler_name": "GCC",
+    "compiler_version": "13.3.0",
+    "build_type": "Release",
+    "operating_system": "Linux",
+    "cpu_description": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+    "hardware_threads": 1
+  },
+  "workload_config": {
+    "schema_version": 1,
+    "workload_id": "V02",
+    "name": "repeated-loop",
+    "seed": 20261029,
+    "pattern": "repeated_loop",
+    "page_size": 4096,
+    "virtual_pages": 256,
+    "frames": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "accesses": 20000,
+    "write_probability": 0.2,
+    "loop_pages": 10,
+    "working_set_pages": 8,
+    "phase_length": 1000,
+    "adversarial_frames": 0,
+    "repetitions": 5
+  },
+  "measurement": {
+    "repetitions": 5,
+    "validate_interval": 0,
+    "throughput_unit": "accesses_per_second",
+    "trace_checksum_fnv1a64": 8483923245616930052
+  },
+  "results": [
+    {
+      "policy": "fifo",
+      "frames": 4,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 10,
+        "replacements": 19996,
+        "writebacks": 3865,
+        "metadata_bytes": 4192,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          17522970.4,
+          22866210.9,
+          18755058,
+          18167564.9,
+          25170752.1
+        ],
+        "accesses_per_s_median": 18755058
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 4,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 10,
+        "replacements": 19996,
+        "writebacks": 3865,
+        "metadata_bytes": 4192,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          14035205.9,
+          13846819.6,
+          14319139.2,
+          14498710.7,
+          14365009.1
+        ],
+        "accesses_per_s_median": 14319139.2
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 4,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 6664,
+        "page_faults": 13336,
+        "fault_rate": 0.6668,
+        "compulsory_faults": 10,
+        "replacements": 13332,
+        "writebacks": 3442,
+        "metadata_bytes": 4192,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          18462413.3,
+          17569088.2,
+          18413527.3,
+          18466504.5,
+          17388461.7
+        ],
+        "accesses_per_s_median": 18413527.3
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 4,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 10,
+        "replacements": 19996,
+        "writebacks": 3865,
+        "metadata_bytes": 4192,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          16499404,
+          15701606.7,
+          16590516.2,
+          12821425.1,
+          15940433.8
+        ],
+        "accesses_per_s_median": 15940433.8
+      }
+    },
+    {
+      "policy": "fifo",
+      "frames": 8,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 10,
+        "replacements": 19992,
+        "writebacks": 3864,
+        "metadata_bytes": 4256,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          28493153.8,
+          24292363.5,
+          27654676.1,
+          26444742.4,
+          19609919.5
+        ],
+        "accesses_per_s_median": 26444742.4
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 8,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 10,
+        "replacements": 19992,
+        "writebacks": 3864,
+        "metadata_bytes": 4256,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          13251018,
+          12614174,
+          13546198.3,
+          12574670,
+          12742400.3
+        ],
+        "accesses_per_s_median": 12742400.3
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 8,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 15548,
+        "page_faults": 4452,
+        "fault_rate": 0.2226,
+        "compulsory_faults": 10,
+        "replacements": 4444,
+        "writebacks": 2251,
+        "metadata_bytes": 4256,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          22750203.9,
+          22419011.3,
+          23723188.3,
+          21585870.8,
+          23560095.3
+        ],
+        "accesses_per_s_median": 22750203.9
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 8,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 0,
+        "page_faults": 20000,
+        "fault_rate": 1,
+        "compulsory_faults": 10,
+        "replacements": 19992,
+        "writebacks": 3864,
+        "metadata_bytes": 4256,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          15476953.3,
+          15773057.3,
+          16546087.1,
+          15375413.8,
+          16175837.8
+        ],
+        "accesses_per_s_median": 15773057.3
+      }
+    },
+    {
+      "policy": "fifo",
+      "frames": 12,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 19990,
+        "page_faults": 10,
+        "fault_rate": 0.0005,
+        "compulsory_faults": 10,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 4320,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          37243531.7,
+          34878752.7,
+          37226201.3,
+          27895442.3,
+          24396938.2
+        ],
+        "accesses_per_s_median": 34878752.7
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 12,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 19990,
+        "page_faults": 10,
+        "fault_rate": 0.0005,
+        "compulsory_faults": 10,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 4320,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          23741690.4,
+          25156315.1,
+          22768411.1,
+          23865323.2,
+          26374855.3
+        ],
+        "accesses_per_s_median": 23865323.2
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 12,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 19990,
+        "page_faults": 10,
+        "fault_rate": 0.0005,
+        "compulsory_faults": 10,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 4320,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          19638918.8,
+          20400710.8,
+          19942187.6,
+          20541409.9,
+          20353271.7
+        ],
+        "accesses_per_s_median": 20353271.7
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 12,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 19990,
+        "page_faults": 10,
+        "fault_rate": 0.0005,
+        "compulsory_faults": 10,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 4320,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          23032664.9,
+          22076736.5,
+          22010941.6,
+          23464621.8,
+          34767855
+        ],
+        "accesses_per_s_median": 23032664.9
+      }
+    },
+    {
+      "policy": "fifo",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 19990,
+        "page_faults": 10,
+        "fault_rate": 0.0005,
+        "compulsory_faults": 10,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 4384,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          32915904.8,
+          34120260.3,
+          32036393.3,
+          34833495.9,
+          34737540.5
+        ],
+        "accesses_per_s_median": 34120260.3
+      }
+    },
+    {
+      "policy": "lru",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 19990,
+        "page_faults": 10,
+        "fault_rate": 0.0005,
+        "compulsory_faults": 10,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 4384,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          32897929.2,
+          30017455.2,
+          32050254.8,
+          33629949.5,
+          32361412.3
+        ],
+        "accesses_per_s_median": 32361412.3
+      }
+    },
+    {
+      "policy": "opt",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 19990,
+        "page_faults": 10,
+        "fault_rate": 0.0005,
+        "compulsory_faults": 10,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 4384,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          23204225,
+          30266939.3,
+          22257636.6,
+          20284304.8,
+          22454879.7
+        ],
+        "accesses_per_s_median": 22454879.7
+      }
+    },
+    {
+      "policy": "clock",
+      "frames": 16,
+      "algorithmic": {
+        "accesses": 20000,
+        "reads": 16135,
+        "writes": 3865,
+        "hits": 19990,
+        "page_faults": 10,
+        "fault_rate": 0.0005,
+        "compulsory_faults": 10,
+        "replacements": 0,
+        "writebacks": 0,
+        "metadata_bytes": 4384,
+        "validation_checks": 0
+      },
+      "wall_clock": {
+        "accesses_per_s_by_repetition": [
+          32856530.3,
+          35565545.5,
+          21914157.9,
+          33797599.7,
+          32595852.2
+        ],
+        "accesses_per_s_median": 32856530.3
+      }
+    }
+  ]
+}
