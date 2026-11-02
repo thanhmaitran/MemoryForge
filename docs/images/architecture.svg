@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 770" width="1000" height="770" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>MemoryForge system architecture</title>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5b6770"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#ffffff"/><line x1="0" y1="0" x2="0" y2="6" stroke="#c0504d" stroke-width="2"/></pattern>
+</defs>
+<rect width="1000" height="770" fill="#ffffff"/>
+<text font-weight="600" x="500" y="22" text-anchor="middle" font-size="15" fill="#1f3a5f">MemoryForge - system architecture (data flow)</text>
+<rect x="40" y="40" width="200" height="60" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="140.0" y="66.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">configs/*.json</text>
+<text x="140.0" y="85.0" text-anchor="middle" font-size="12" fill="#5b6770">workload definitions</text>
+<rect x="300" y="40" width="400" height="60" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="500.0" y="66.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">CLI &amp; Experiment Runner</text>
+<text x="500.0" y="85.0" text-anchor="middle" font-size="12" fill="#5b6770">allocator run | vm run | validate</text>
+<path d="M240,70 H300" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="300" y="140" width="400" height="60" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="500.0" y="166.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Deterministic Workload Generator</text>
+<text x="500.0" y="185.0" text-anchor="middle" font-size="12" fill="#5b6770">seeded RNG - allocation traces, page traces</text>
+<path d="M500,100 V140" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="60" y="260" width="400" height="120" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="260.0" y="316.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Allocator Engine</text>
+<text x="260.0" y="335.0" text-anchor="middle" font-size="12" fill="#5b6770">First Fit - Best Fit - Worst Fit</text>
+<text x="260" y="356" text-anchor="middle" font-size="12" fill="#5b6770">arena - splitting - coalescing - alignment</text>
+<rect x="540" y="260" width="400" height="120" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="740.0" y="316.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Virtual Memory Simulator</text>
+<text x="740.0" y="335.0" text-anchor="middle" font-size="12" fill="#5b6770">address translation - page table</text>
+<text x="740" y="356" text-anchor="middle" font-size="12" fill="#5b6770">page-fault handler - dirty/write-back counters</text>
+<path d="M500,200 V230 H260 V260" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M500,200 V230 H740 V260" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="255" y="226" text-anchor="end" font-size="11" fill="#5b6770">allocation trace</text>
+<text x="745" y="226" text-anchor="start" font-size="11" fill="#5b6770">page-access trace</text>
+<rect x="540" y="410" width="400" height="50" rx="6" fill="#e6f4f1" stroke="#2a9d8f" stroke-width="1.4"/>
+<text x="740.0" y="431.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1c6b61">Page Replacement Policies</text>
+<text x="740.0" y="450.0" text-anchor="middle" font-size="12" fill="#5b6770">FIFO - LRU - Clock - OPT (offline baseline)</text>
+<path d="M740,380 V410" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="60" y="500" width="600" height="56" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="360.0" y="524.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Validation &amp; Metrics</text>
+<text x="360.0" y="543.0" text-anchor="middle" font-size="12" fill="#5b6770">invariant validators - fragmentation indicator - fault counters</text>
+<path d="M260,380 V500" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M600,460 V500" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="700" y="500" width="240" height="56" rx="6" fill="#ffffff" stroke="#2a9d8f" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="820.0" y="524.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1c6b61">Test suite (CTest)</text>
+<text x="820.0" y="543.0" text-anchor="middle" font-size="12" fill="#5b6770">unit - property - sanitizers</text>
+<path d="M700,528 H660" fill="none" stroke="#5b6770" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<text x="680" y="520" text-anchor="middle" font-size="10" fill="#5b6770">drives</text>
+<rect x="60" y="590" width="880" height="56" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="500.0" y="614.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Benchmark Measurement &amp; Export</text>
+<text x="500.0" y="633.0" text-anchor="middle" font-size="12" fill="#5b6770">algorithmic metrics (deterministic) separated from wall-clock timing - CSV / JSON + build metadata</text>
+<path d="M360,556 V590" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="60" y="680" width="880" height="56" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="500.0" y="704.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Python Analysis &amp; Reproducible Reports</text>
+<text x="500.0" y="723.0" text-anchor="middle" font-size="12" fill="#5b6770">pandas / matplotlib - charts, results.md</text>
+<path d="M500,646 V680" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="500" y="758" text-anchor="middle" font-size="11" fill="#5b6770">Allocator and VM simulator are independent modules; they share only the workload, metrics and export layers.</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>Virtual address translation</title>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5b6770"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#ffffff"/><line x1="0" y1="0" x2="0" y2="6" stroke="#c0504d" stroke-width="2"/></pattern>
+</defs>
+<rect width="1000" height="600" fill="#ffffff"/>
+<text font-weight="600" x="500" y="24" text-anchor="middle" font-size="15" fill="#1f3a5f">Virtual address translation and page-fault handling</text>
+<rect x="40" y="50" width="180" height="56" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="130.0" y="83.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Virtual address VA</text>
+<rect x="280" y="40" width="190" height="38" rx="6" fill="#ffffff" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="375.0" y="64.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">VPN = VA / page_size</text>
+<rect x="280" y="84" width="190" height="38" rx="6" fill="#ffffff" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="375.0" y="108.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">offset = VA % page_size</text>
+<path d="M220,78 H280" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="520" y="50" width="200" height="56" rx="6" fill="#eef3f8" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="620.0" y="74.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Page table lookup</text>
+<text x="620.0" y="93.0" text-anchor="middle" font-size="12" fill="#5b6770">flat table indexed by VPN</text>
+<path d="M470,59 H495 V78 H520" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="790" y="50" width="170" height="56" rx="6" fill="#ffffff" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="875.0" y="83.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">present?</text>
+<path d="M720,78 H790" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="790" y="170" width="170" height="56" rx="6" fill="#e6f4f1" stroke="#2a9d8f" stroke-width="1.4"/>
+<text x="875.0" y="194.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1c6b61">PFN from entry</text>
+<text x="875.0" y="213.0" text-anchor="middle" font-size="12" fill="#5b6770">hit - set dirty on write</text>
+<path d="M875,106 V170" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="884" y="142" text-anchor="start" font-size="11" fill="#5b6770">yes</text>
+<rect x="520" y="270" width="440" height="56" rx="6" fill="#e6f4f1" stroke="#2a9d8f" stroke-width="1.4"/>
+<text x="740.0" y="303.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1c6b61">Physical address PA = PFN x page_size + offset</text>
+<path d="M875,226 V270" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M375,122 V248 H520 V298" fill="none" stroke="#5b6770" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<text x="445" y="243" text-anchor="middle" font-size="10" fill="#5b6770">offset</text>
+<rect x="520" y="150" width="200" height="56" rx="6" fill="#fbeceb" stroke="#c0504d" stroke-width="1.4"/>
+<text x="620.0" y="174.0" text-anchor="middle" font-size="14" font-weight="600" fill="#c0504d">Page fault</text>
+<text x="620.0" y="193.0" text-anchor="middle" font-size="12" fill="#5b6770">count (compulsory?)</text>
+<path d="M815,106 V128 H620 V150" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="718" y="122" text-anchor="middle" font-size="11" fill="#5b6770">no</text>
+<rect x="40" y="360" width="200" height="60" rx="6" fill="#ffffff" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="140.0" y="386.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Free frame?</text>
+<text x="140.0" y="405.0" text-anchor="middle" font-size="12" fill="#5b6770">lowest frame first</text>
+<path d="M520,178 H140 V360" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="300" y="360" width="260" height="60" rx="6" fill="#e6f4f1" stroke="#2a9d8f" stroke-width="1.4"/>
+<text x="430.0" y="386.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1c6b61">select_victim()</text>
+<text x="430.0" y="405.0" text-anchor="middle" font-size="12" fill="#5b6770">FIFO / LRU / Clock / OPT</text>
+<path d="M240,390 H300" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="270" y="382" text-anchor="middle" font-size="11" fill="#5b6770">no</text>
+<rect x="300" y="470" width="260" height="60" rx="6" fill="#ffffff" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="430.0" y="496.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Evict victim</text>
+<text x="430.0" y="515.0" text-anchor="middle" font-size="12" fill="#5b6770">write back if dirty, clear its entry</text>
+<path d="M430,420 V470" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="30" y="470" width="230" height="60" rx="6" fill="#ffffff" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="145.0" y="496.0" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3a5f">Load page</text>
+<text x="145.0" y="515.0" text-anchor="middle" font-size="12" fill="#5b6770">map VPN to frame, update PTE</text>
+<path d="M140,420 V470" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="150" y="450" text-anchor="start" font-size="11" fill="#5b6770">yes</text>
+<path d="M300,500 H260" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M140,530 V555 H700 V326" fill="none" stroke="#5b6770" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="430" y="572" text-anchor="middle" font-size="11" fill="#5b6770">frame becomes PFN - continue with PA calculation</text>
+<text x="750" y="420" text-anchor="start" font-size="11" fill="#1f3a5f">Invariants checked by VirtualMemory::diagnose():</text>
+<text x="750" y="440" text-anchor="start" font-size="11" fill="#5b6770">each resident page owns exactly one frame</text>
+<text x="750" y="458" text-anchor="start" font-size="11" fill="#5b6770">no replacement while a frame is free</text>
+<text x="750" y="476" text-anchor="start" font-size="11" fill="#5b6770">hits + faults = accesses</text>
+<text x="750" y="494" text-anchor="start" font-size="11" fill="#5b6770">faults = replacements + frames in use</text>
+</svg>

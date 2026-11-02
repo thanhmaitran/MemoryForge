@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>Allocator memory layout</title>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5b6770"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#ffffff"/><line x1="0" y1="0" x2="0" y2="6" stroke="#c0504d" stroke-width="2"/></pattern>
+</defs>
+<rect width="1000" height="560" fill="#ffffff"/>
+<text font-weight="600" x="500" y="24" text-anchor="middle" font-size="15" fill="#1f3a5f">Allocator layout - one 1024-byte arena, Best Fit (examples/allocator/basic_usage.cpp)</text>
+<text x="60" y="60" text-anchor="start" font-size="12" fill="#1f3a5f">1. after allocate(100,16), allocate(200,64), allocate(300,16)</text>
+<rect x="60.0" y="70" width="96.2" height="46" fill="#cfe3f5" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="108.125" y="98" text-anchor="middle" font-size="12" fill="#1f3a5f">A</text>
+<rect x="156.2" y="70" width="13.8" height="46" fill="#ffffff" stroke="#5b6770" stroke-width="1.4" stroke-dasharray="4 3"/>
+<rect x="170.0" y="70" width="178.8" height="46" fill="#cfe3f5" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="259.375" y="98" text-anchor="middle" font-size="12" fill="#1f3a5f">B (64-aligned)</text>
+<rect x="348.8" y="70" width="261.2" height="46" fill="#cfe3f5" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="479.375" y="98" text-anchor="middle" font-size="12" fill="#1f3a5f">C</text>
+<rect x="610.0" y="70" width="330.0" height="46" fill="#ffffff" stroke="#5b6770" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="775.0" y="98" text-anchor="middle" font-size="12" fill="#5b6770">free tail 384 B</text>
+<rect x="145.9" y="70" width="10.3" height="46" fill="url(#hatch)" stroke="#c0504d" stroke-width="1"/>
+<text x="160.25" y="136" text-anchor="start" font-size="11" fill="#c0504d">A: 100 B requested, 112 B reserved - hatched 12 B = internal overhead</text>
+<text x="160.25" y="154" text-anchor="start" font-size="11" fill="#5b6770">gap [112,128): 16 B left free so that B starts on a 64-byte boundary</text>
+<text x="60" y="180" text-anchor="start" font-size="12" fill="#1f3a5f">2. deallocate(B): B and the alignment gap merge into one hole</text>
+<rect x="60.0" y="190" width="96.2" height="46" fill="#cfe3f5" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="108.125" y="218" text-anchor="middle" font-size="12" fill="#1f3a5f">A</text>
+<rect x="156.2" y="190" width="192.5" height="46" fill="#ffffff" stroke="#5b6770" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="252.5" y="218" text-anchor="middle" font-size="12" fill="#5b6770">free hole 224 B</text>
+<rect x="348.8" y="190" width="261.2" height="46" fill="#cfe3f5" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="479.375" y="218" text-anchor="middle" font-size="12" fill="#1f3a5f">C</text>
+<rect x="610.0" y="190" width="330.0" height="46" fill="#ffffff" stroke="#5b6770" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="775.0" y="218" text-anchor="middle" font-size="12" fill="#5b6770">free tail 384 B</text>
+<text x="60" y="280" text-anchor="start" font-size="12" fill="#1f3a5f">3. deallocate(A): coalesces with the hole in front of C</text>
+<rect x="60.0" y="290" width="288.8" height="46" fill="#ffffff" stroke="#5b6770" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="204.375" y="318" text-anchor="middle" font-size="12" fill="#5b6770">free 336 B</text>
+<rect x="348.8" y="290" width="261.2" height="46" fill="#cfe3f5" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="479.375" y="318" text-anchor="middle" font-size="12" fill="#1f3a5f">C</text>
+<rect x="610.0" y="290" width="330.0" height="46" fill="#ffffff" stroke="#5b6770" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="775.0" y="318" text-anchor="middle" font-size="12" fill="#5b6770">free tail 384 B</text>
+<text x="60" y="380" text-anchor="start" font-size="12" fill="#1f3a5f">4. deallocate(C): all neighbours merge</text>
+<rect x="60.0" y="390" width="880.0" height="46" fill="#ffffff" stroke="#5b6770" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="500.0" y="418" text-anchor="middle" font-size="12" fill="#5b6770">one free block - 1024 B (fully coalesced)</text>
+<line x1="60" y1="470" x2="940" y2="470" stroke="#5b6770" stroke-width="1.2"/>
+<line x1="60.0" y1="466" x2="60.0" y2="474" stroke="#5b6770"/>
+<text x="60.0" y="490" text-anchor="middle" font-size="11" fill="#5b6770">0</text>
+<line x1="156.2" y1="466" x2="156.2" y2="474" stroke="#5b6770"/>
+<text x="156.25" y="490" text-anchor="middle" font-size="11" fill="#5b6770">112</text>
+<line x1="170.0" y1="466" x2="170.0" y2="474" stroke="#5b6770"/>
+<line x1="348.8" y1="466" x2="348.8" y2="474" stroke="#5b6770"/>
+<text x="348.75" y="490" text-anchor="middle" font-size="11" fill="#5b6770">336</text>
+<line x1="610.0" y1="466" x2="610.0" y2="474" stroke="#5b6770"/>
+<text x="610.0" y="490" text-anchor="middle" font-size="11" fill="#5b6770">640</text>
+<line x1="940.0" y1="466" x2="940.0" y2="474" stroke="#5b6770"/>
+<text x="940.0" y="490" text-anchor="middle" font-size="11" fill="#5b6770">1024</text>
+<text x="500" y="512" text-anchor="middle" font-size="11" fill="#5b6770">arena offset (bytes)</text>
+<text x="500" y="525" text-anchor="middle" font-size="11" fill="#5b6770">Rules: offsets and sizes are multiples of 16 - no per-block header (metadata is out-of-band) - freed blocks coalesce immediately.</text>
+<text x="500" y="544" text-anchor="middle" font-size="11" fill="#5b6770">Split: leftovers before and after the chosen block return to the free list.</text>
+</svg>
