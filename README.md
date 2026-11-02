@@ -449,7 +449,7 @@ The following screenshots document the actual local execution environment and be
 
 ![Build Environment Information](docs/images/local_run/memoryforge-environment.png)
 
-These screenshots complement the automated test results and experimental charts. They provide evidence of successful execution on the documented local environment.
+These screenshots complement the automated test results and experimental charts, providing visual evidence of successful execution on the documented local environment.
 
 ---
 
