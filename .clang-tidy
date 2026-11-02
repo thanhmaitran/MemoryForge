@@ -1,0 +1,16 @@
+Checks: >
+  bugprone-*,
+  cppcoreguidelines-slicing,
+  cppcoreguidelines-pro-type-member-init,
+  misc-*,
+  -misc-non-private-member-variables-in-classes,
+  -misc-no-recursion,
+  modernize-*,
+  -modernize-use-trailing-return-type,
+  -modernize-use-nodiscard,
+  performance-*,
+  readability-container-size-empty,
+  readability-redundant-*,
+  readability-misleading-indentation
+WarningsAsErrors: ''
+HeaderFilterRegex: 'include/memoryforge/.*'

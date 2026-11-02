@@ -1,0 +1,27 @@
+# Build outputs
+build/
+cmake-build-*/
+out/
+CMakeUserPresets.json
+
+# IDE
+.vscode/
+.idea/
+
+# Python analysis
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# Generated measurements and coverage data
+*.profraw
+*.gcda
+*.gcno
+
+# Local, unverified benchmark output (verified reports go under reports/)
+reports/local/
+
+# OS files
+.DS_Store
+Thumbs.db
