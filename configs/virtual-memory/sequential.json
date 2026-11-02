@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "workload_id": "V01",
+  "name": "sequential",
+  "seed": 20261029,
+  "pattern": "sequential",
+  "page_size": 4096,
+  "virtual_pages": 512,
+  "frames": [4, 16, 64],
+  "accesses": 20000,
+  "write_probability": 0.2
+}

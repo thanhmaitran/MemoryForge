@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "workload_id": "V05",
+  "name": "adversarial-cyclic",
+  "seed": 20261029,
+  "pattern": "adversarial",
+  "page_size": 4096,
+  "virtual_pages": 64,
+  "frames": [8, 16],
+  "accesses": 20000,
+  "write_probability": 0.3,
+  "adversarial_frames": 8
+}

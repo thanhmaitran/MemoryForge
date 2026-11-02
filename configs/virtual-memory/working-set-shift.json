@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "workload_id": "V03",
+  "name": "working-set-shift",
+  "seed": 20261029,
+  "pattern": "working_set_shift",
+  "page_size": 4096,
+  "virtual_pages": 256,
+  "frames": [4, 8, 16, 32],
+  "accesses": 40000,
+  "write_probability": 0.3,
+  "working_set_pages": 12,
+  "phase_length": 2000
+}

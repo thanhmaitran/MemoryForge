@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "workload_id": "V02",
+  "name": "repeated-loop",
+  "seed": 20261029,
+  "pattern": "repeated_loop",
+  "page_size": 4096,
+  "virtual_pages": 256,
+  "frames": [4, 8, 12, 16],
+  "accesses": 20000,
+  "write_probability": 0.2,
+  "loop_pages": 10
+}
