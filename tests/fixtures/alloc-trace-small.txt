@@ -1,0 +1,9 @@
+# Small hand-checkable allocation trace (1024-byte heap).
+A 100 16
+A 200 16
+A 300 16
+F 1
+A 150 16
+F 0
+F 2
+F 3
