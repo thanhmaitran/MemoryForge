@@ -311,7 +311,7 @@ The current test suite contains eight registered CTest entries:
 <details>
 <summary><strong>Release configuration — 8/8 passed</strong></summary>
 
-![Release Test Results](docs/images/local_run/memoryforge-release-tests.png)
+![Release Test Results](docs\images\local_run\memoryforge-release-tests.png.png)
 
 </details>
 
