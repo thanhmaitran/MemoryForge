@@ -400,15 +400,15 @@ A higher value indicates that free memory is more fragmented.
 
 ### Allocation Latency
 
-![Allocation Latency Comparison](docs/images/local_run/chart_a_allocation_latency.png)
+![Allocation Latency Comparison](docs/images/local_run/chart_a_allocation_latency.png.png)
 
 ### Fragmentation Over Time
 
-![Fragmentation Over Time](docs/images/local_run/chart_b_fragmentation_over_time.png)
+![Fragmentation Over Time](docs/images/local_run/chart_b_fragmentation_over_time.png.png)
 
 ### Allocation Failure Rate
 
-![Allocation Failure Rate](docs/images/local_run/chart_allocation_failure_rate.png)
+![Allocation Failure Rate](docs/images/local_run/chart_allocation_failure_rate.png.png)
 
 ### 2. Virtual Memory Page Replacement
 
