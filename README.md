@@ -439,7 +439,7 @@ The following screenshots document the actual local execution environment and be
 
 ### Allocator Benchmark
 
-![Allocator Benchmark Execution](docs/images/local_run/memoryforge-allocator-benchmark.png)
+![Allocator Benchmark Execution](docs/images/local_run/memoryforge-release-tests.png.png)
 
 ### Virtual Memory Benchmark
 
