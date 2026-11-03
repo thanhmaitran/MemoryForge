@@ -443,11 +443,11 @@ The following screenshots document the actual local execution environment and be
 
 ### Virtual Memory Benchmark
 
-![Virtual Memory Benchmark Execution](docs/images/local_run/memoryforge-vm-benchmark.png)
+![Virtual Memory Benchmark Execution](docs/images/local_run/memoryforge-vm-benchmark.png.png)
 
 ### Build Environment
 
-![Build Environment Information](docs/images/local_run/memoryforge-environment.png)
+![Build Environment Information](docs/images/local_run/memoryforge-environment.png.png)
 
 These screenshots complement the automated test results and experimental charts, providing visual evidence of successful execution on the documented local environment.
 
